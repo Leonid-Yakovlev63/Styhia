@@ -1,0 +1,31 @@
+.nav{
+  grid-area: n;
+  background-color: rgb(155, 155, 155);
+  border-bottom-left-radius: 15px;
+  
+}
+.item a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  color: #D9D9D9;
+}
+
+.items{
+  margin-top: 5%;
+  margin-left: 10%;
+  
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  .items{
+    display: flex;
+  }
+  .nav{
+    width: 100%;
+    background-color: rgb(155, 155, 155);
+    position: fixed; /* Фиксированное положение */
+    left: 0;
+    bottom: 0; /* Левый нижний угол */
+  }
+  }
