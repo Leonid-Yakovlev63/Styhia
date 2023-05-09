@@ -1,0 +1,10 @@
+.componentWrapper{
+    background-color: #6B7B89;
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 41px;
+}
+.avatar{
+    padding: 15px;
+    z-index: 999;
+}

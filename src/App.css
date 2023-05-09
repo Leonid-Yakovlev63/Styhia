@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+.app-wrapper {
+  margin: 0 auto;
+  display: grid;
+  width: 1200px;
+  grid-template-areas: 
+  "h h"
+  "n c";
+
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    /*grid-gap: 10px;*/
+    
+}
+.app-wrapper-content{
+    grid-area: c;
+    background-color:   #474A51;
+        border-bottom-right-radius: 15px;
+}
+
+body{
+  background-color: #282c34;
+  
+}
+@media (min-width: 320px)and (max-width: 768px) {
+  .app-wrapper {
+    margin: 0 auto;
+    display: grid;
+
+    grid-template-areas:
+    "h h h h"
+    "c c c c"
+    "c c c c"
+    "n n n n";
+  
+      grid-template-rows: 60px 1fr;
+      grid-template-columns: 2fr 10fr;
+
+  }
+  }

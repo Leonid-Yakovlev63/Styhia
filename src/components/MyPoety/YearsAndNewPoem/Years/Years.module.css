@@ -1,0 +1,11 @@
+.componentWrapper{
+    background: #292C34;
+    mix-blend-mode: normal;
+    border-radius: 10px;
+    display: flex;
+flex-flow: column;
+align-items: center;
+padding: 5px;
+margin-top: 5%;
+padding-bottom: 5%;
+}

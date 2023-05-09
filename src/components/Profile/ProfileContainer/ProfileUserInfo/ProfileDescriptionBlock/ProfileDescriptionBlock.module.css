@@ -1,0 +1,13 @@
+.componentWrapper{
+    background: #292C34;
+    border-radius: 0px 0px 30px 30px;
+    padding: 1px;
+}
+.textInfoContainer{
+    background: #292C34;
+    border-radius: 0px 0px 30px 30px;
+}
+.textInfo{
+    margin-left: 35%;
+    color: #D9D9D9;
+}

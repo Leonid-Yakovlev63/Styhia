@@ -1,0 +1,44 @@
+.content{
+    grid-area: c;
+    background-color: rgb(116, 23, 255);
+}
+.dialogs{
+    padding: 5px;
+    margin-left: 2%;
+    width: 95%;
+    border-radius: 15px;
+    background-color: slategrey;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogsItems{
+    padding: 10px;
+}
+.dialogsItems .active{
+    color: rgb(255, 255, 255);
+}
+.title{
+    margin-left: 35%;
+}
+.messages{
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+}
+.currentDialog{
+    padding: 5px;
+    margin-left: 2%;
+    margin-top: 2%;
+    width: 95%;
+    border-radius: 15px;
+    background-color: slategrey;
+}
+.dialogContent{
+    border-radius: 15px;
+    background-color: #D9D9D9;
+    margin: 0 auto;
+    width: 95%;
+    height: 350px;
+}

@@ -1,0 +1,10 @@
+.componentWrapper{
+    background: rgba(217, 217, 217, 0.8);
+    border-radius: 41px 41px 0px 0px;
+    width: 100%;
+    height: 200px;   
+}
+.avatar{
+    padding: 20px;
+
+}

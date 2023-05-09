@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './components/Header/Header';
+import Profile from './components/Profile/Profile';
+import Messages from './components/Messages/Messages';
+import MyPoety from './components/MyPoety/MyPoety';
+import Friends from './components/Friends/Friends';
+import Lent from './components/Lent/Lent';
+import Library from './components/Library/Library';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className='app-wrapper'>
+        <Header />
+        <Navbar />
+        <div className='app-wrapper-content'>
+          <Routes>
+            <Route path='/' element={<Profile />} />
+            <Route path='/profile' element={<Profile />} />
+            <Route path='/messages' element={<Messages />} />
+            <Route path='/myPoety' element={<MyPoety />} />
+            <Route path='/friends' element={<Friends />} />
+            <Route path='/lent' element={<Lent />} />
+            <Route path='/library' element={<Library />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
-}
-
+};
 export default App;
+

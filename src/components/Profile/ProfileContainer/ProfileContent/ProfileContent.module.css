@@ -1,0 +1,9 @@
+.componentWrapper{
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 12fr 5fr;
+    gap: 15px;
+}
+.secondContainer{
+
+}

@@ -1,0 +1,16 @@
+.componentWrapper{
+    background: #D9D9D9;
+border-radius: 31px;
+display: grid;
+
+}
+.friendsList{
+  display: grid;
+  padding: 0px 0px 15px 0px;
+  grid-gap: 15px;
+  grid-template-columns: repeat(3, minmax(10px, 1fr));
+  grid-template-rows: repeat(1, 50px);
+}
+.componentTitle h2{
+  text-align: center;
+}

@@ -1,0 +1,9 @@
+.componentWrapper{
+    width: 32%;
+    height: 32%;
+}
+.avatar img{
+    display: block;
+    width:100%;
+    border-radius: 50%;
+}

@@ -1,0 +1,4 @@
+.componentWrapper{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}

@@ -1,0 +1,16 @@
+.componentWrapper{
+    width: 50%;
+}
+.registrationTitle{
+    background: #292C34;
+    text-align: center;
+    color: #FFFFFF;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.registration{
+    background-color: #FFFFFF;
+}
+.button{
+    text-align: center;
+}

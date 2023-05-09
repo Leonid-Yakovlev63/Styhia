@@ -1,0 +1,13 @@
+.componentWrapper {
+    margin: 0 auto;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    background: #fff;
+    
+    border-radius: 50%;
+}
+.componentWrapper img {
+    display: block;
+    width:100%;
+}
