@@ -12,7 +12,7 @@ const Navbar = (props) => {
 
   return (
     <nav className={s.nav}>
-      <Person />
+      <Person userInfo = {props.userInfo}/>
       <div className={s.items}>
         <div className = {s.item}>
           <NavLink to='profile' style={({ isActive }) =>

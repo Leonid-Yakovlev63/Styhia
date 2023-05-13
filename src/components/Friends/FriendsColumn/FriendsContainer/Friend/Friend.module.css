@@ -1,0 +1,31 @@
+.container{
+    padding: 10px;
+    background: #6B7B89;
+    border-radius: 10px;
+    height: 75px;
+    border-color: silver;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 3%;
+}
+.ava img{
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+
+.aboutUser{
+    display: flex;
+}
+.textInfo{
+    margin-left: 2%;
+}
+.textInfo h3{
+margin: 0;
+}
+.textInfo h4{
+    margin-top: 5%;
+
+}

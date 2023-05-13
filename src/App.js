@@ -9,20 +9,20 @@ import Lent from './components/Lent/Lent';
 import Library from './components/Library/Library';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-
+import state from './state/state';
 const App = () => {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
-        <Navbar />
+        <Navbar userInfo = {state.userInfo}/>
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path='/' element={<Profile />} />
-            <Route path='/profile' element={<Profile />} />
+            <Route path='/' element={<Profile friends={state.friends} userInfo = {state.userInfo} />}  />
+            <Route path='/profile' element={<Profile friends={state.friends} userInfo = {state.userInfo} />}  />
             <Route path='/messages' element={<Messages />} />
             <Route path='/myPoety' element={<MyPoety />} />
-            <Route path='/friends' element={<Friends />} />
+            <Route path='/friends' element={<Friends friends={state.friends} recFriends={state.recFriends} />} />
             <Route path='/lent' element={<Lent />} />
             <Route path='/library' element={<Library />} />
           </Routes>

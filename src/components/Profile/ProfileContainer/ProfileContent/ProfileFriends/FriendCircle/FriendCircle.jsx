@@ -1,7 +1,7 @@
 
-import s from './Friend.module.css'
+import s from './FriendCircle.module.css'
 
-export default function Friend(props) {
+export default function FriendCircle(props) {
     return (
         <div className={s.componentWrapper}>
             <img src={props.friendAva} alt="img"></img>

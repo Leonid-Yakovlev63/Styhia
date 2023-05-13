@@ -3,13 +3,13 @@ import s from './ProfileUserInfo.module.css'
 import ProfileDescriptonBlock from './ProfileDescriptionBlock/ProfileDescriptionBlock';
 
 
-const ProfileUserInfo = () => {
+const ProfileUserInfo = (props) => {
 
 return (
         <div className={s.componentWrapper}>
-            <ProfilePageCover />
+            <ProfilePageCover ava = {props.userInfo.ava}/>
             
-            <ProfileDescriptonBlock />
+            <ProfileDescriptonBlock userInfo = {props.userInfo}/>
         </div>
     );
 };

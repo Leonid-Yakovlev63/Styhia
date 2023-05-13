@@ -1,15 +1,14 @@
 import PageTitle from '../UI/PageTitle/PageTitle';
-import Registration from '../UI/Registration/Registration';
 import s from './Profile.module.css'
 import ProfileContainer from './ProfileContainer/ProfileContainer';
 
-const Profile = () => {
+const Profile = (props) => {
 
 return (
         <div className={s.componentWrapper}>
             <PageTitle title = "Профиль"/>
-            <ProfileContainer />
-            <Registration />
+            <ProfileContainer friends={props.friends} userInfo = {props.userInfo}/>
+
         </div>
     );
 };

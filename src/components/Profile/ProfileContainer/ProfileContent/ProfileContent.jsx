@@ -4,7 +4,7 @@ import s from './ProfileContent.module.css'
 import ProfileFriends from './ProfileFriends/ProfileFriends';
 import ProfilePoetys from './ProfilePoetys/ProfilePoetys';
 
-const ProfileContent = () => {
+const ProfileContent = (props) => {
 
 return (
         <div className={s.componentWrapper}>
@@ -12,7 +12,7 @@ return (
                 <ProfileAboutMe />
             </div>
             <div className={s.secondContainer}>
-                <ProfileFriends />
+                <ProfileFriends friends={props.friends}/>
                 <ProfilePoetys />
             </div>
         </div>
