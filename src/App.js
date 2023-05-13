@@ -10,6 +10,7 @@ import Library from './components/Library/Library';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import state from './state/state';
+import ScrollToTopButton from './components/UI/ScrollToTopButton/ScrollToTopButton';
 const App = () => {
   return (
     <BrowserRouter>
@@ -24,10 +25,15 @@ const App = () => {
             <Route path='/myPoety' element={<MyPoety />} />
             <Route path='/friends' element={<Friends friends={state.friends} recFriends={state.recFriends} />} />
             <Route path='/lent' element={<Lent />} />
-            <Route path='/library' element={<Library />} />
+            <Route path='/library' element={<Library friends={state.friends} />} />
           </Routes>
+          <div className='scroll'>
+            <ScrollToTopButton />
+          </div>
         </div>
+        
       </div>
+      
     </BrowserRouter>
   );
 };

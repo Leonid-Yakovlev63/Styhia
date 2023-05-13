@@ -1,6 +1,6 @@
 
 import s from './ProfileFriends.module.css'
-import FriendCircle from './FriendCircle/FriendCircle';
+import FriendCircle from '../../../../UI/FriendCircle/FriendCircle';
 
 
 

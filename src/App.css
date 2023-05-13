@@ -59,6 +59,10 @@ body{
   background-color: #282c34;
   
 }
+.scroll{
+  text-align: center;
+  padding: 10px;
+}
 @media (min-width: 320px)and (max-width: 768px) {
   .app-wrapper {
     margin: 0 auto;
