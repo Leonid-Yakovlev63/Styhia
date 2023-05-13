@@ -1,6 +1,6 @@
 
 let state = {
-    isRegistered : 0,
+    isRegistered : 1,
 
     userInfo : {
         userName: "Леонид Яковлев",
