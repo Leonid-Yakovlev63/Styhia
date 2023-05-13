@@ -1,16 +1,19 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import s from './../Messages.module.css'
-
+import React, { useState } from "react";
+import s from './../Messages.module.css';
 
 const DialogItem = (props) => {
+    const [selected, setSelected] = useState(false);
 
-    let path=('/dialogs/' + props.id) ;
+    const handleClick = () => {
+        props.onDialogSelect(props.name);
+        setSelected(true);
+    };
 
-    return <div className={s.dialog + ' ' + s.active}>
-    <NavLink to= {path} style={({ isActive }) => ({
-color: isActive ? 'white' : '#000000',})}><a>{props.name}</a></NavLink>
-</div>
-}
+    return (
+        <div className={`${s.dialog} ${selected ? s.active : ''}`}>
+            <a onClick={handleClick}>{props.name}</a>
+        </div>
+    );
+};
 
 export default DialogItem;
