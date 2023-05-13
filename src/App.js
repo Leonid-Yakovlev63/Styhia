@@ -11,12 +11,17 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import state from './state/state';
 import ScrollToTopButton from './components/UI/ScrollToTopButton/ScrollToTopButton';
-const App = () => {
+import Registration from './components/UI/Registration/Registration';
+import Authorisation from './components/UI/Authorisation/Authorisation';
+const App = () => { {/*
+1. Переделываем в классовую компоненту
+2. Метод который изменяет состояние
+*/}
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
-        <Navbar userInfo = {state.userInfo}/>
+        <Navbar userInfo = {state.userInfo} isRegistered = {state.isRegistered}/>
         <div className='app-wrapper-content'>
           <Routes>
             <Route path='/' element={<Profile friends={state.friends} userInfo = {state.userInfo} />}  />
@@ -26,10 +31,9 @@ const App = () => {
             <Route path='/friends' element={<Friends friends={state.friends} recFriends={state.recFriends} />} />
             <Route path='/lent' element={<Lent />} />
             <Route path='/library' element={<Library friends={state.friends} />} />
+            <Route path='/registration' element={<Registration />} />
+            <Route path='/login' element={<Authorisation />} />
           </Routes>
-          <div className='scroll'>
-            <ScrollToTopButton />
-          </div>
         </div>
       </div>
    </BrowserRouter>

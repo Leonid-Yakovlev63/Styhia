@@ -1,5 +1,6 @@
 
 let state = {
+    isRegistered : 0,
 
     userInfo : {
         userName: "Леонид Яковлев",

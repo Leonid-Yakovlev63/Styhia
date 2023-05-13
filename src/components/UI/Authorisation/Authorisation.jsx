@@ -1,22 +1,19 @@
 import React from "react";
-import s from "./Registration.module.css";
+import s from "./Authorisation.module.css";
 import { useState } from "react";
-const Registration = (props) => {
+const Authorisation = (props) => {
 
-     
-        const [firstName, setFirstName] = useState("");
-        const [surName, setSurName] = useState("");
         const [email, setEmail] = useState("");
         const [password, setPassword] = useState("");
-        const [checkPassword, setCheckPassword] = useState("");
+
       
         const handleSubmit = async (event) => {
             event.preventDefault();
             
-            const response = await fetch("/api/register", {
+            const response = await fetch("/api/authorisation", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ firstname : firstName, surname : surName, email, password }),
+              body: JSON.stringify({ email, password }),
             });
 
             const data = await response.json();
@@ -33,7 +30,7 @@ const Registration = (props) => {
   return (
     <div className={s.componentWrapper}>
         <div className={s.registrationTitle}>
-            <h1>Регистрация</h1>
+            <h1>Авторизация</h1>
         </div>
         <form className={s.registration} onSubmit={handleSubmit}>
                 <div className={s.regItem}>
@@ -44,24 +41,15 @@ const Registration = (props) => {
                     <label className={s.label}for="psw"><b>Пароль</b></label>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <div className={s.regItem}>
-                    <label className={s.label}for="psw-repeat"><b>Повторите пароль</b></label>
-                    <input type="password" value={checkPassword} onChange={(e) => setCheckPassword(e.target.value)} />
-                </div>
-                <div className={s.regItem}>
-                    <label className={s.label}for="name"><b>Имя</b></label>
-                    <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-                </div>
-                <div className={s.regItem}>
-                    <label className={s.label}for="last-name"><b>Фамилия</b></label>
-                    <input type="text" value={surName} onChange={(e) => setSurName(e.target.value)} />
-                </div>
                 <div className={s.button}>
-                    <button type="submit"><p>Зарегистрироваться</p></button>
+                    <button type="submit"><p>Войти</p></button>
+                </div>
+                <div className={s.restore}>
+                    <h3>Забыли пароль?<strong> <a>Восстановить!</a></strong></h3>
                 </div>
         </form>
     </div>
   );
 };
 
-export default Registration;
+export default Authorisation;

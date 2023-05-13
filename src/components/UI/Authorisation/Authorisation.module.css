@@ -25,6 +25,7 @@
     border: none;
 	outline: none;
     background-color: rgb(155, 155, 155);
+    width: 25%;
 }
 .button button:hover{
     transition: 0.3s;
@@ -57,3 +58,10 @@
     background-color: #ddd;
     outline: none;
   }
+.restore{
+    text-align: center;
+    cursor: pointer;
+}
+.restore a:hover{
+    color: #61dafb;
+}

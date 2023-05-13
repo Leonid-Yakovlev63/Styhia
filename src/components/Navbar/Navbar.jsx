@@ -9,9 +9,9 @@ let activeStyle = {
 
 
 const Navbar = (props) => {
-
-  return (
-    <nav className={s.nav}>
+if (props.isRegistered){
+  return(
+<nav className={s.nav}>
       <Person userInfo = {props.userInfo}/>
       <div className={s.items}>
         <div className = {s.item}>
@@ -45,8 +45,26 @@ const Navbar = (props) => {
             }>Библиотека</NavLink>
         </div>
       </div>
-    </nav>
-  );
+    </nav>)
+} else {
+return(
+  <nav className={s.nav}>
+    <div className={s.items}>
+      <div className = {s.item}>
+            <NavLink to='login' style={({ isActive }) =>
+                isActive ? activeStyle : undefined
+              }>Войти</NavLink>
+          </div>
+          <div className = {s.item}>
+            <NavLink to='registration' style={({ isActive }) =>
+                isActive ? activeStyle : undefined
+              }>Зарегистрироваться</NavLink>
+          </div>
+        </div>
+  </nav>
+)
+}
+
 };
 
 export default Navbar;
