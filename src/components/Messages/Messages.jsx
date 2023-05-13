@@ -17,9 +17,11 @@ const Messages = (props) => {
 
     let dialogsElements = props.dialogsPage.dialogs.map((d) => (
         <DialogItem
+            key={d.id}
             name={d.name}
             id={d.id}
             onDialogSelect={handleDialogSelect}
+            selected={selectedDialog === d.name}
         />
     ));
 

@@ -42,3 +42,6 @@ a{
     width: 95%;
     height: 350px;
 }
+.cursor{
+    cursor: pointer;
+}
