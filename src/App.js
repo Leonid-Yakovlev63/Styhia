@@ -31,10 +31,8 @@ const App = () => {
             <ScrollToTopButton />
           </div>
         </div>
-        
       </div>
-      
-    </BrowserRouter>
+   </BrowserRouter>
   );
 };
 export default App;

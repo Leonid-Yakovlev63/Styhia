@@ -1,5 +1,6 @@
 .componentWrapper{
     width: 50%;
+    margin: 0 auto;
 }
 .registrationTitle{
     background: #292C34;
