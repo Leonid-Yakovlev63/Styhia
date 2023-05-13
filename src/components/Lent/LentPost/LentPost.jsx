@@ -9,7 +9,7 @@ const LentPost = (props) => {
         <div className={s.wrapper}>
             <div className={s.contentWrapper}>
                 <div сlassName={s.personInfo} style={{width:"30%"}}>
-                    <Person id = {props.id} userName = {props.userName} content = {props.content} title = {props.title} level = {props.level}/>
+                    {/*<Friend />*/}
                 </div>
                 <div className={s.contentBlock}>
                     <p>{props.title}</p>
