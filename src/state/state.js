@@ -1,5 +1,6 @@
 
 let state = {
+
     isRegistered : 1,
 
     userInfo : {
@@ -63,6 +64,7 @@ let state = {
                     {id: 5, message:'Привет, ставлю тебе зачёт автоматом!'}]
     }
 };
+
 
 
 

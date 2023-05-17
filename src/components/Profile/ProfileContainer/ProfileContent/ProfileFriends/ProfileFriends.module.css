@@ -14,3 +14,8 @@ display: grid;
 .componentTitle h2{
   text-align: center;
 }
+@media (min-width: 320px)and (max-width: 768px) {
+  .componentWrapper{
+      margin-top: 5%;
+  }
+  }

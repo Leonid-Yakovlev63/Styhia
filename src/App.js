@@ -16,6 +16,13 @@ import Authorisation from './components/UI/Authorisation/Authorisation';
 const App = () => { {/*
 1. Переделываем в классовую компоненту
 2. Метод который изменяет состояние
+
+  Дима:
+    -App.js переделать под class
+    -Сделать основную проверку на логин
+  Лёня:
+    -Пробросить props
+    -Сделать подтверждение почты
 */}
   return (
     <BrowserRouter>
