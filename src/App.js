@@ -9,10 +9,11 @@ import Lent from './components/Lent/Lent';
 import Library from './components/Library/Library';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import state from './state/state';
+import state from './redux/state';
 import ScrollToTopButton from './components/UI/ScrollToTopButton/ScrollToTopButton';
 import Registration from './components/UI/Registration/Registration';
 import Authorisation from './components/UI/Authorisation/Authorisation';
+import { useDispatch, useSelector } from 'react-redux';
 const App = () => { {/*
 1. Переделываем в классовую компоненту
 2. Метод который изменяет состояние
@@ -24,6 +25,10 @@ const App = () => { {/*
     -Пробросить props
     -Сделать подтверждение почты
 */}
+
+const dispatch = useDispatch();
+const initialState = useSelector(state => state.value);
+
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
