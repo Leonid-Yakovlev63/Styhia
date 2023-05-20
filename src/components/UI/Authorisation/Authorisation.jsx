@@ -1,28 +1,23 @@
 import React from "react";
 import s from "./Authorisation.module.css";
 import { useState } from "react";
+import api from "../../../service/api";
+import { loaded, setUser } from "../../../redux/redux";
+import { useDispatch } from "react-redux";
 const Authorisation = (props) => {
 
         const [email, setEmail] = useState("");
         const [password, setPassword] = useState("");
 
-      
+        const dispatch = useDispatch();
         const handleSubmit = async (event) => {
             event.preventDefault();
             
-            const response = await fetch("/api/authorisation", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ email, password }),
-            });
-
-            const data = await response.json();
-            if (response.ok) {
-              // обработать успешную регистрацию
-            } else {
-              // обработать ошибку регистрации
-            }
-          
+            api.login(email, password).then(r=>{
+              if(r.ok){
+                api.getUserInfo().then(u=>dispatch(setUser(u))).catch(()=>dispatch(loaded()));
+              }
+            })
           
         };
         

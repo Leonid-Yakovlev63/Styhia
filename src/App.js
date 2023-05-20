@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
@@ -14,6 +14,8 @@ import ScrollToTopButton from './components/UI/ScrollToTopButton/ScrollToTopButt
 import Registration from './components/UI/Registration/Registration';
 import Authorisation from './components/UI/Authorisation/Authorisation';
 import { useDispatch, useSelector } from 'react-redux';
+import api from './service/api';
+import { loaded, setUser } from './redux/redux';
 const App = () => { {/*
 1. Переделываем в классовую компоненту
 2. Метод который изменяет состояние
@@ -28,16 +30,20 @@ const App = () => { {/*
 
 const dispatch = useDispatch();
 const initialState = useSelector(state => state.value);
+  const user = useSelector(state=>state.userInfo);
+  useEffect(()=>{
+    api.getUserInfo().then(u=>dispatch(setUser(u))).catch(()=>dispatch(loaded()));
+  }, [])
 
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
-        <Navbar userInfo = {state.userInfo} isRegistered = {state.isRegistered}/>
+        <Navbar userInfo = {user} isRegistered = {state.isRegistered}/>
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path='/' element={<Profile friends={state.friends} userInfo = {state.userInfo} />}  />
-            <Route path='/profile' element={<Profile friends={state.friends} userInfo = {state.userInfo} />}  />
+            <Route path='/' element={<Profile friends={state.friends} userInfo = {user} />}  />
+            <Route path='/profile' element={<Profile friends={state.friends} userInfo = {user} />}  />
             <Route path='/messages' element={<Messages dialogsPage={state.dialogsPage}/>} />
             <Route path='/myPoety' element={<MyPoety />} />
             <Route path='/friends' element={<Friends friends={state.friends} recFriends={state.recFriends} />} />

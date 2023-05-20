@@ -1,21 +1,14 @@
 
 import s from './ProfileAboutMe.module.css'
 
-const ProfileAboutMe = () => {
+const ProfileAboutMe = (props) => {
 
 return (
         <div className={s.componentWrapper}>
             <div className={s.aboutMe}>
                 <h2>Обо мне</h2>
             </div>
-            <h3>Пустое вы сердечным ты<br />
-Она, обмолвясь, заменила<br />
-И все счастливые мечты<br />
-В душе влюбленной возбудила.<br />
-Пред ней задумчиво стою,<br />
-Свести очей с нее нет силы;<br />
-И говорю ей: как вы милы!<br />
-И мыслю: как тебя люблю!</h3>
+            <h3>{props.userInfo.status??"Тут пока ничего нет. Если вы знакомы с этим человеком посоветуйте ему написать о себе."}</h3>
         </div>
     );
 };

@@ -7,27 +7,27 @@ const counterSlice = createSlice({
         name: null,
         surname: null,
         status : null,
-    }
+    },
+    loading: true
   },
   reducers: {
-    setUserName : (state, parametr) =>{
-        state.userInfo.name = parametr.payload.name;
-        state.userInfo.surname = parametr.payload.surname;
+    setUser : (state, parameter) =>{
+      state.userInfo = parameter.payload;
+      state.loading = false;
     },
-    setStatus : (state, parametr) =>{
-        state.userInfo.status = parametr.payload.status;
+    loaded: state => {
+      state.loading = false;
     }
   }
 })
 
-export const { setUserName } = counterSlice.actions
+export const { setUser, loaded } = counterSlice.actions
 
 export const store = configureStore({
   reducer: counterSlice.reducer
 })
 
 store.subscribe(() => console.log(store.getState()))
-store.dispatch(setUserName({name : 'Александр', surname: 'Пушкин'}))
 
 /* Can still subscribe to the store
 store.subscribe(() => console.log(store.getState()))

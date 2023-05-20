@@ -9,7 +9,7 @@ const ProfileContent = (props) => {
 return (
         <div className={s.componentWrapper}>
             <div className={s.firstContainer}>
-                <ProfileAboutMe />
+                <ProfileAboutMe userInfo = {props.userInfo} />
             </div>
             <div className={s.secondContainer}>
                 <ProfileFriends friends={props.friends}/>

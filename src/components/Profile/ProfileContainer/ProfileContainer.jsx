@@ -9,7 +9,7 @@ const ProfileContainer = (props) => {
 return (
         <div className={s.componentWrapper}>
             <ProfileUserInfo userInfo = {props.userInfo}/>
-            <ProfileContent friends={props.friends}/>
+            <ProfileContent userInfo = {props.userInfo} friends={props.friends}/>
         </div>
     );
 };

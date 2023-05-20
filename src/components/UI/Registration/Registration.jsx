@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./Registration.module.css";
 import { useState } from "react";
+import api from "../../../service/api";
 const Registration = (props) => {
 
      
@@ -12,12 +13,13 @@ const Registration = (props) => {
       
         const handleSubmit = async (event) => {
             event.preventDefault();
-            
-            const response = await fetch("/api/register", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ firstname : firstName, surname : surName, email, password }),
-            });
+            if(password!=checkPassword) return;
+            const response = api.registration({
+              firstname: firstName,
+              surname: surName,
+              email,
+              password
+            })
 
             const data = await response.json();
             if (response.ok) {

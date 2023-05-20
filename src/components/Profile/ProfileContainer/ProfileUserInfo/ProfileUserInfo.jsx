@@ -1,15 +1,15 @@
 import ProfilePageCover from './ProfilePageCover/ProfilePageCover';
 import s from './ProfileUserInfo.module.css'
-import ProfileDescriptonBlock from './ProfileDescriptionBlock/ProfileDescriptionBlock';
+import ProfileDescriptionBlock from './ProfileDescriptionBlock/ProfileDescriptionBlock';
 
 
 const ProfileUserInfo = (props) => {
 
 return (
         <div className={s.componentWrapper}>
-            <ProfilePageCover ava = {props.userInfo.ava}/>
+            <ProfilePageCover ava = {"/api/avatars/"+props.userInfo.avatar}/>
             
-            <ProfileDescriptonBlock userInfo = {props.userInfo}/>
+            <ProfileDescriptionBlock userInfo = {props.userInfo}/>
         </div>
     );
 };

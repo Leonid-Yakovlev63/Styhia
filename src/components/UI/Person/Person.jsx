@@ -6,10 +6,10 @@ const Person = (props) => {
     <div className={s.container}>
                 <div className={s.aboutUser}>
                     <div className={s.ava}>
-                        <img src={props.userInfo.ava}/>
+                        <img src={"/api/avatars/"+props.userInfo.avatar}/>
                     </div>
                     <div className={s.textInfo}>
-                        <p>{props.userInfo.userName}</p>
+                        <p>{`${props.userInfo.name} ${props.userInfo.surname}`}</p>
                     </div>
                 </div>
             </div>

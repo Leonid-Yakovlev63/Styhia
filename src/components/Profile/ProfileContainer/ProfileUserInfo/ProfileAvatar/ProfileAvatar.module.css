@@ -4,6 +4,8 @@
 }
 .avatar img{
     display: block;
-    width:100%;
+    width:85%;
+    position: relative;
+    background: gray;
     border-radius: 50%;
 }
