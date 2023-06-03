@@ -5,6 +5,7 @@
 .avatar img{
     display: block;
     width:85%;
+    height: 100%;
     position: relative;
     background: gray;
     border-radius: 50%;

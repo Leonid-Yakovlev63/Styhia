@@ -12,7 +12,7 @@ return (
                 <ProfileAboutMe userInfo = {props.userInfo} />
             </div>
             <div className={s.secondContainer}>
-                <ProfileFriends friends={props.friends}/>
+                <ProfileFriends/>
                 <ProfilePoetys />
             </div>
         </div>

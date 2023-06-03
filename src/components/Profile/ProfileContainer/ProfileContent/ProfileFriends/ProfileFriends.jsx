@@ -2,14 +2,10 @@
 import s from './ProfileFriends.module.css'
 import FriendCircle from '../../../../UI/FriendCircle/FriendCircle';
 
-
-
-
 const ProfileFriends = (props) => {
 
 
-
-    let friendsList = props.friends.slice(0, 6).map(f => <FriendCircle friendAva={f.friendAva} />);
+    let friendsList = props.friends?.slice(0, 6)?.map(f => <FriendCircle friendAva={f.friendAva} />);
 
 
 return (

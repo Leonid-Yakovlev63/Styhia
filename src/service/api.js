@@ -4,16 +4,22 @@ let api = {
             method: "get"
         }
     ).then(v=>v.json()),
-    registratidata: (data) => fetch(
+    registration: (data) => fetch(
         "/api/registr",{
+            headers: {
+                "Content-Type": "application/json",
+            },
             method: "post",
-            data: data
+            body: JSON.stringify(data)
         }
     ),
     login: (email, password) => fetch(
         "/api/login",{
             method: "post",
-            data: { email, password }
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password })
         }
     ),
     logout: () => fetch(
