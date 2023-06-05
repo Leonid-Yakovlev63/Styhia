@@ -43,7 +43,9 @@ const initialState = useSelector(state => state.value);
         <div className='app-wrapper-content'>
           <Routes>
             <Route path='/' element={<Profile friends={state.friends} userInfo = {user} />}  />
-            <Route path='/profile' element={<Profile friends={state.friends} userInfo = {user} />}  />
+            <Route path='/profile' element={<Profile friends={state.friends} userInfo = {user} />} >
+              <Route path='/:id' element={<Profile friends={state.friends} userInfo = {user} />} />
+            </Route> 
             <Route path='/messages' element={<Messages dialogsPage={state.dialogsPage}/>} />
             <Route path='/myPoety' element={<MyPoety />} />
             <Route path='/friends' element={<Friends friends={state.friends} recFriends={state.recFriends} />} />
