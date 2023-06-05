@@ -11,8 +11,8 @@ const Profile = (props) => {
     console.log(location.pathname)
     let myProfile = ["/","/profile"].includes(location.pathname);
     if(myProfile){
-        if(loaded&&!props.userInfo?.role==="NEW") return history("confirm", {replace: true});
-        if(loaded&&!props.userInfo?.role) return history("login", {replace: true});
+        if(loaded&&!props.userInfo?.role==="NEW") return history("confirm", {replace: true, relative:'path'});
+        if(loaded&&!props.userInfo?.role) return history("login", {replace: true, relative:'path'});
     }else{
         props.userInfo = null;
 
