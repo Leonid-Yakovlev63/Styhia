@@ -13,11 +13,3 @@
   color: rgb(0, 255, 255);
   text-shadow: 1px 1px 1px #000;
 }
-.header button{
-  display: inline;
-  position: relative;
-  margin-right: 1.6%;
-  margin-top: 1.6%;
-  float: right;
-  color: red;
-}
