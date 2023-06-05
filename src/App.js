@@ -16,17 +16,8 @@ import Authorisation from './components/UI/Authorisation/Authorisation';
 import { useDispatch, useSelector } from 'react-redux';
 import api from './service/api';
 import { loaded, setUser } from './redux/redux';
-const App = () => { {/*
-1. Переделываем в классовую компоненту
-2. Метод который изменяет состояние
-
-  Дима:
-    -App.js переделать под class
-    -Сделать основную проверку на логин
-  Лёня:
-    -Пробросить props
-    -Сделать подтверждение почты
-*/}
+import Poems from './components/Poems/Poems';
+const App = () => {
 
 const dispatch = useDispatch();
 const initialState = useSelector(state => state.value);
@@ -44,10 +35,10 @@ const initialState = useSelector(state => state.value);
           <Routes>
             <Route path='/' element={<Profile friends={state.friends} userInfo = {user} />}  />
             <Route path='/profile' element={<Profile friends={state.friends} userInfo = {user} />} >
-              <Route path='/:id' element={<Profile friends={state.friends} userInfo = {user} />} />
+              <Route path=':id' element={<Profile friends={state.friends} userInfo = {user} />} />
             </Route> 
             <Route path='/messages' element={<Messages dialogsPage={state.dialogsPage}/>} />
-            <Route path='/myPoety' element={<MyPoety />} />
+            <Route path='/myPoety' element={<Poems />} />
             <Route path='/friends' element={<Friends friends={state.friends} recFriends={state.recFriends} />} />
             <Route path='/lent' element={<Lent />} />
             <Route path='/library' element={<Library friends={state.friends} />} />
