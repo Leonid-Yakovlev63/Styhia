@@ -4,8 +4,14 @@ import LogOut from "./LogOut/LogOut";
 const Header = () => {
   return (
     <header className={s.header}>
-      <h1>Стихия</h1>
-      <LogOut />
+      <div className={s.headerContainer}>
+        <h1 className={s.title}>
+          Стихия
+        </h1>
+        <div className={s.logoutContainer}>
+          <LogOut />
+        </div>
+      </div>
     </header>
   );
 };

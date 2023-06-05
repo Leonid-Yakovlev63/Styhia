@@ -3,13 +3,32 @@
   border-top-right-radius: 15px;
   grid-area: h;
   background-color: #000;
-  margin: 0 auto;
-  text-align: center;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.header h1{
-  display: inline;
-  margin-top: 1%;
+
+.headerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10%;
+}
+
+.title {
+  text-align: center;
+  margin: 0 auto;
   color: rgb(0, 255, 255);
   text-shadow: 1px 1px 1px #000;
 }
+
+.logoutContainer {
+  margin-left: auto;
+  margin: 0;
+  padding: 10px ;
+}
+
+
+

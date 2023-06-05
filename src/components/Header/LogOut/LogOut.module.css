@@ -1,5 +1,19 @@
-.logOut{
-    padding: 15px;
-    background-color: slategray;
+.logOutBtn{
+    padding: 10px;
+    background-color: #292C34;
     border-radius: 10px;
+    border:none;
   }
+.logOutBtn:hover{
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.logOutText{
+  margin: 0;
+  padding: 0;
+}
+.logOutText:hover{
+  color: rgb(0, 255, 255);
+  transition: 0.2s;
+}

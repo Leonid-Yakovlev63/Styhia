@@ -8,7 +8,7 @@ const ProfileContainer = (props) => {
 
 return (
         <div className={s.componentWrapper}>
-            <ProfileUserInfo userInfo = {props.userInfo}/>
+            <ProfileUserInfo userInfo = {props.userInfo} myProfile = {props.myProfile}/>
             <ProfileContent userInfo = {props.userInfo}/>
         </div>
     );

@@ -9,7 +9,7 @@ return (
         <div className={s.componentWrapper}>
             <ProfilePageCover ava = {"/api/avatars/"+props.userInfo.avatar}/>
             
-            <ProfileDescriptionBlock userInfo = {props.userInfo}/>
+            <ProfileDescriptionBlock userInfo = {props.userInfo} myProfile = {props.myProfile}/>
         </div>
     );
 };

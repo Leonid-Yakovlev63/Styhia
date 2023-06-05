@@ -6,7 +6,6 @@ const MyPoety = () => {
 
 return (
         <div className={s.componentWrapper}>
-           <YearsAndNewPoem />
            <Poems />
         </div>
     );

@@ -3,16 +3,18 @@ import s from "./Authorisation.module.css";
 import { useState } from "react";
 import api from "../../../service/api";
 import { loaded, setUser } from "../../../redux/redux";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 const Authorisation = (props) => {
 
         const [email, setEmail] = useState("");
         const [password, setPassword] = useState("");
-
+        const auth = useSelector(state=>state.userInfo?.role&&!state.loading);
+        const history = useNavigate();
+        if(auth) return history("/profile", {replace: true, relative:'path'});
         const dispatch = useDispatch();
         const handleSubmit = async (event) => {
             event.preventDefault();
-            
             api.login(email, password).then(r=>{
               if(r.ok){
                 api.getUserInfo().then(u=>dispatch(setUser(u))).catch(()=>dispatch(loaded()));
