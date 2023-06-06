@@ -3,7 +3,6 @@ import './App.css';
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
 import Messages from './components/Messages/Messages';
-import MyPoety from './components/MyPoety/MyPoety';
 import Friends from './components/Friends/Friends';
 import Lent from './components/Lent/Lent';
 import Library from './components/Library/Library';
@@ -17,7 +16,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import api from './service/api';
 import { loaded, setUser } from './redux/redux';
 import Poems from './components/Poems/Poems';
-const App = () => {
+import EditProfile from './components/UI/EditProfile/EditProfile';
+const App = () => { {/*
+1. Переделываем в классовую компоненту
+2. Метод который изменяет состояние
+
+  Дима:
+    -App.js переделать под class
+    -Сделать основную проверку на логин
+  Лёня:
+    -Пробросить props
+    -Сделать подтверждение почты
+*/}
 
 const dispatch = useDispatch();
 const initialState = useSelector(state => state.value);
@@ -38,12 +48,15 @@ const initialState = useSelector(state => state.value);
               <Route path=':id' element={<Profile friends={state.friends} userInfo = {user} />} />
             </Route> 
             <Route path='/messages' element={<Messages dialogsPage={state.dialogsPage}/>} />
-            <Route path='/myPoety' element={<Poems />} />
+            <Route path='/poems' element={<Poems />} >
+              <Route path=':id' element={<Poems />} />
+            </Route>
             <Route path='/friends' element={<Friends friends={state.friends} recFriends={state.recFriends} />} />
             <Route path='/lent' element={<Lent />} />
             <Route path='/library' element={<Library friends={state.friends} />} />
             <Route path='/registration' element={<Registration />} />
             <Route path='/login' element={<Authorisation />} />
+            <Route path='/edit' element={<EditProfile />} />
           </Routes>
         </div>
       </div>

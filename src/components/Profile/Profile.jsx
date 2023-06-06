@@ -14,7 +14,7 @@ const Profile = (props) => {
     console.log(params);
     const loaded = useSelector(state=>!state.loading);
     console.log(location.pathname)
-    let myProfile = ["/","/profile"].includes(location.pathname)||params?.id==props?.userInfo?.id;
+    let myProfile = ["/","/profile","/profile/"].includes(location.pathname)||params?.id==props?.userInfo?.id;
     useEffect(()=>{
         if(!params?.id) return;
         api.getUserInfoById(params.id).then(v=>{

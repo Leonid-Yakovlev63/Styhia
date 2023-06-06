@@ -26,7 +26,7 @@ const Navbar = (props) => {
               }>Сообщения</NavLink>
           </div>
           <div className = {s.item}>
-            <NavLink to='myPoety' style={({ isActive }) =>
+            <NavLink to='poems' style={({ isActive }) =>
                 isActive ? activeStyle : undefined
               }>Мои стихи</NavLink>
           </div>
