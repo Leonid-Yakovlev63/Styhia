@@ -1,6 +1,8 @@
 import React from 'react'
 import s from './AuthorBlock.module.css'
 import { useNavigate } from 'react-router-dom';
+import { IconTrash } from '@tabler/icons-react';
+import api from '../../../service/api';
 
 export default function AuthorBlock(props) {
   /**
@@ -21,6 +23,8 @@ export default function AuthorBlock(props) {
           </div>
         </div>
       </div>
+      <div style={{display:"flex", flex:"1"}}/>
+      {props.deleteId?<IconTrash cursor={"pointer"} onClick={()=>api.removePost(props.deleteId).then(()=>props.reload())} />:undefined}
     </div>
   )
 }

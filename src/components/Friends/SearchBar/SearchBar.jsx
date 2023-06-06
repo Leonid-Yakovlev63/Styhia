@@ -17,6 +17,7 @@ function SearchBar({ onSearch }) {
     <form className={s['search-form']} onSubmit={handleFormSubmit}>
 
       <input
+        style={{margin:0}}
         className={s['search-input']}
         type="text"
         id="search"
@@ -24,9 +25,9 @@ function SearchBar({ onSearch }) {
         value={query}
         onChange={handleInputChange}
       />
-      {/*<button className={s['search-button']} type="submit">
-        Search
-      </button>*/}
+      <button className={s['search-button']} type="submit">
+        Найти
+      </button>
     </form>
   );
 }

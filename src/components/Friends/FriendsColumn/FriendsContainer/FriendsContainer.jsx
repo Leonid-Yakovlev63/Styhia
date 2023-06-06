@@ -6,7 +6,7 @@ import s from './FriendsContainer.module.css'
 const FriendsContainer = (props) => {
 
 
-    let friendsList = props.friends.map( f => <Friend ava = {f.ava} friendName = {f.friendName} friendInfo = {f.friendInfo}/>);
+    let friendsList = props.friends?.map( f => <Friend data={f} />);
 return (
         <div className={s.componentWrapper}>
             {friendsList}

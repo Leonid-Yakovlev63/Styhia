@@ -7,10 +7,10 @@ import FriendsContainer from './FriendsContainer/FriendsContainer';
 const FriendsColumn = (props) => {
     
 return (
-        <div className={s.componentWrapper}>
-            <PageTitle title = {props.title} />
-            <FriendsContainer friends = {props.friends}/>
-        </div>
+    <div className={s.componentWrapper}>
+        <PageTitle title = {props.title} />
+        <FriendsContainer friends = {props.friends}/>
+    </div>
     );
 };
 

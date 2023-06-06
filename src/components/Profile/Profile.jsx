@@ -11,9 +11,7 @@ const Profile = (props) => {
     const location = useLocation();
     const params = useParams();
     let [userInfo, setUserInfo] = useState({});
-    console.log(params);
     const loaded = useSelector(state=>!state.loading);
-    console.log(location.pathname)
     let myProfile = ["/","/profile","/profile/"].includes(location.pathname)||params?.id==props?.userInfo?.id;
     useEffect(()=>{
         if(!params?.id) return;
@@ -33,7 +31,7 @@ const Profile = (props) => {
     return (
         <div className={s.componentWrapper}>
             <PageTitle title = "Профиль"/>
-            <ProfileContainer userInfo = {userInfo?.role?userInfo:props.userInfo} myProfile = {myProfile}/>
+            <ProfileContainer userInfo = {myProfile?props.userInfo:userInfo} myProfile = {myProfile}/>
         </div>
     );
 };

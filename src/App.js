@@ -17,6 +17,7 @@ import api from './service/api';
 import { loaded, setUser } from './redux/redux';
 import Poems from './components/Poems/Poems';
 import EditProfile from './components/UI/EditProfile/EditProfile';
+import NewPoem from './components/NewPoem/NewPoem';
 const App = () => { {/*
 1. Переделываем в классовую компоненту
 2. Метод который изменяет состояние
@@ -41,13 +42,14 @@ const initialState = useSelector(state => state.value);
       <div className='app-wrapper'>
         <Header />
         <Navbar userInfo = {user} isRegistered = {state.isRegistered}/>
-        <div className='app-wrapper-content'>
+        <div id='main' className='app-wrapper-content'>
           <Routes>
             <Route path='/' element={<Profile friends={state.friends} userInfo = {user} />}  />
             <Route path='/profile' element={<Profile friends={state.friends} userInfo = {user} />} >
               <Route path=':id' element={<Profile friends={state.friends} userInfo = {user} />} />
             </Route> 
             <Route path='/messages' element={<Messages dialogsPage={state.dialogsPage}/>} />
+            <Route path='/newPoem' element={<NewPoem />} />
             <Route path='/poems' element={<Poems />} >
               <Route path=':id' element={<Poems />} />
             </Route>

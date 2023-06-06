@@ -12,7 +12,7 @@ const Poem = (props) => {
     let files = data.files?.filter(v=>v.type==='ANY').map(v=><div/>);
     return (
         <div className={s.componentWrapper}>
-            <AuthorBlock user={data.author} date={data.createdAt}/>
+            <AuthorBlock user={data.author} date={data.createdAt} deleteId={user?.id==data.author.id?data.id:null} reload={props.reload}/>
             <div>
                 <div className={s.title}>
                     {data?.title?data.title:undefined}

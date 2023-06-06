@@ -72,6 +72,47 @@ let api = {
         }
     ).then(v=>v.json()),
     /**
+     * @returns {Promise<{id:number,name:string,surname:string,status:string|null,avatar:number|null,role:string,createdAt}[]>}
+     */
+    getUserFriends: () => fetch(
+        `/api/friends`,{
+            method: "get"
+        }
+    ).then(v=>v.json()),
+    /**
+     * @param {number} id 
+     * @returns {Promise<{id:number,name:string,surname:string,status:string|null,avatar:number|null,role:string,createdAt}[]>}
+     */
+    getUserFriendsById: (id) => fetch(
+        `/api/friends/${id}`,{
+            method: "get"
+        }
+    ).then(v=>v.json()),
+    uploadFiles: (body) => fetch(
+        "/api/files",{
+            method: "put",
+            body: body
+        }
+    ),
+    sendPost: (title, text, files) => fetch(
+        "/api/posts",{
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                title:title??null,
+                text:text??null,
+                files:files??null
+            })
+        }
+    ),
+    removePost: (id) => fetch(
+        `/api/posts/${id}`,{
+            method: "delete"
+        }
+    ),
+    /**
      * get all user dialogs
      * @param {number} id 
      * @param {number} offset 
