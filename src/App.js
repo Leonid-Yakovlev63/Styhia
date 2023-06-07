@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import state from './redux/state';
 import ScrollToTopButton from './components/UI/ScrollToTopButton/ScrollToTopButton';
+import PoemId from './components/PoemId/PoemId';
 import Registration from './components/UI/Registration/Registration';
 import Authorisation from './components/UI/Authorisation/Authorisation';
 import { useDispatch, useSelector } from 'react-redux';
@@ -53,6 +54,7 @@ const initialState = useSelector(state => state.value);
             <Route path='/poems' element={<Poems />} >
               <Route path=':id' element={<Poems />} />
             </Route>
+            <Route path='/poem/:id' element={<PoemId />} />
             <Route path='/friends' element={<Friends friends={state.friends} recFriends={state.recFriends} />} />
             <Route path='/lent' element={<Lent />} />
             <Route path='/library' element={<Library friends={state.friends} />} />

@@ -1,0 +1,25 @@
+.send{
+    display: flex;
+    height: 3rem;
+}.send>input{
+    height: 100%;
+    border-radius: .25rem;
+    height: 1rem;
+    margin-right: 1rem;
+}.send>button{
+    margin-left: 1rem;
+    position: relative;
+    top: -1px;
+}.componentWrapper{
+    border-radius: .5rem;
+    padding: .75rem;
+    display: grid;
+    background-color: #555555;
+    box-shadow: 0 0 0 var(--thin-border) var(--separator_common);
+    grid-template-rows: 3rem auto;
+    grid-template-columns: 1fr;
+    margin: 2rem;
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}

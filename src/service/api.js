@@ -71,6 +71,16 @@ let api = {
             method: "get"
         }
     ).then(v=>v.json()),
+    getPostById: (id, offset=null) => fetch(
+        `/api/posts/${id}/data`,{
+            method: "get"
+        }
+    ).then(v=>v.json()),
+    getCommentsByPostId: (id, offset=null) => fetch(
+        `/api/comments/${id}`,{
+            method: "get"
+        }
+    ).then(v=>v.json()),
     /**
      * @returns {Promise<{id:number,name:string,surname:string,status:string|null,avatar:number|null,role:string,createdAt}[]>}
      */
@@ -132,6 +142,11 @@ let api = {
     ),
     removePost: (id) => fetch(
         `/api/posts/${id}`,{
+            method: "delete"
+        }
+    ),
+    removeComment: (id) => fetch(
+        `/api/comments/${id}`,{
             method: "delete"
         }
     ),

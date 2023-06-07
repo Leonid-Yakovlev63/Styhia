@@ -81,7 +81,7 @@ class Lent extends Component {
       <div onScrollCapture={e=>this.hScroll(e)}>
         <PageTitle title = {"Лента"} />
           {posts.map(post => (
-              <Poem key={post.id} data={post}/>
+              <Poem key={post.id} data={post} comments />
           ))}
         {loading && <PageTitle title = {"Загрузка..."} />}
         {error && <PageTitle title = {"Ошибка загрузки страницы"} />}

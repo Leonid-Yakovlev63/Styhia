@@ -5,13 +5,14 @@ import { IconTrash } from '@tabler/icons-react';
 import api from '../../../service/api';
 import { useSelector } from 'react-redux';
 import LikeButton from '../LikeBtn/LikeButton';
+import DislikeButton from '../DislikeBtn/DislikeButton';
 
 export default function AuthorBlock(props) {
   /**
    * @type {{id:number,name:string,surname:string,avatar:number}}
    */
   const data = props.user;
-  const auth = useSelector(state=>state.userInfo!=="NEW"&&state.userInfo);
+  const auth = useSelector(state=>state.userInfo!=="NEW"&&state.userInfo&&!props.comment);
   const history = useNavigate();
   let [react, setReact] = useState({
     react: props.react,
@@ -43,6 +44,20 @@ export default function AuthorBlock(props) {
       })
   }
 
+  const setDislike = () => {
+    console.log(props)
+    if(react.react==="DISLIKE")
+      api.removeReact(props.postId).then(v=>{
+        if(v.ok)
+          reloadState("NONE");
+      })
+    else
+      api.setDislike(props.postId).then(v=>{
+        if(v.ok)
+          reloadState("DISLIKE");
+      })
+  }
+
   return (
     <div className={s.main}>
       <img className={s.image} src={`/api/avatars/${data?.avatar??null}`} onClick={()=>history(`/profile/${data.id}`)}/>
@@ -57,8 +72,9 @@ export default function AuthorBlock(props) {
         </div>
       </div>
       {auth?<LikeButton liked={react.react==="LIKE"} likes={react.likes} onClick={()=>setLike()} />:undefined}
+      {auth?<DislikeButton disliked={react.react==="DISLIKE"} dislikes={react.dislikes} onClick={()=>setDislike()} />:undefined}
       <div style={{display:"flex", flex:"1"}}/>
-      {props.deleteId?<IconTrash cursor={"pointer"} onClick={()=>api.removePost(props.deleteId).then(()=>props.reload())} />:undefined}
+      {props.deleteId?<IconTrash cursor={"pointer"} onClick={()=>props.comment!==undefined?api.removeComment(data.comment):api.removePost(props.deleteId).then(()=>props.reload())} />:undefined}
     </div>
   )
 }

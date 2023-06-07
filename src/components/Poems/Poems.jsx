@@ -19,7 +19,7 @@ const Poems = (props) => {
         api.getPostsByUserId(id).then(v=>setPoems(v))
     },[user])
     console.log(poems)
-    let poemsList = poems.map( p => <Poem data={p} reload={reload}/>);
+    let poemsList = poems.map( p => <Poem data={p} reload={reload} comments />);
 
     return (
         <div className={s.componentWrapper}>

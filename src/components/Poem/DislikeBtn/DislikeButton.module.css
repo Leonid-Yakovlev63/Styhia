@@ -1,4 +1,4 @@
-.like-button {
+.dislike-button {
     font-size: 1rem;
     padding: 0.5rem;
     border: none;
@@ -10,8 +10,8 @@
   }
 
   
-  .like-button.liked {
-    background-color: #ff0000;
+  .dislike-button.disliked {
+    background-color: black;
   }
   .main{
     margin-left: 1rem;
