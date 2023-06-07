@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import s from './Poem.module.css'
 import AuthorBlock from './AuthorBlock/AuthorBlock';
+import File from './File/File';
 
 const Poem = (props) => {
     /**
@@ -9,11 +10,11 @@ const Poem = (props) => {
     const data = props.data;
     const user = useSelector(state=>state.userInfo);
     let images = data.files?.filter(v=>v.type==='IMAGE').map(v=><img src={`/api/files/${v.id}`} name={v.name}/>);
-    let files = data.files?.filter(v=>v.type==='ANY').map(v=><div/>);
+    let files = data.files?.filter(v=>v.type==='ANY').map(v=><File data={v} />);console.log(data)
     return (
         <div className={s.componentWrapper}>
-            <AuthorBlock user={data.author} date={data.createdAt} deleteId={user?.id==data.author.id?data.id:null} reload={props.reload}/>
-            <div>
+            <AuthorBlock postId={data.id} user={data.author} date={data.createdAt} likes={data.likes} dislikes={data.dislikes} react={data.react} deleteId={user?.id==data.author.id?data.id:null} reload={props.reload}/>
+            <div className={s.mainBlock}>
                 <div className={s.title}>
                     {data?.title?data.title:undefined}
                 </div>

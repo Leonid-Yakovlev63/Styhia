@@ -15,17 +15,18 @@
     font-size: 1rem;
 }.images,.imagesMany{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(1fr));
     margin-top: 1rem;
     margin-right: auto;
     margin-left: auto;
-    max-width: 85%;
-}.images>img{
+    width: 85%;
+}.images>img,.imagesMany>img{
     display: inline-block;
     width: 100%;
     max-height: min-content;
-}.imagesMany>img{
-    display: inline-block;
-    width: 50%;
-    max-height: min-content;
+}.imagesMany{
+    grid-template-columns: repeat(2, 1fr);
+}.files,.mainBlock{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
 }

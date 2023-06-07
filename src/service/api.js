@@ -88,6 +88,29 @@ let api = {
             method: "get"
         }
     ).then(v=>v.json()),
+    sendFriendRequest: (id) => fetch(
+        `/api/friends/${id}`,{
+            method: "post"
+        }
+    ),
+    getFriendRequests: () => fetch(
+        `/api/friends/requests`,{
+            method: "get"
+        }
+    ).then(v=>v.json()),
+    getMyFriendRequests: () => fetch(
+        `/api/friends/requests/my`,{
+            method: "get"
+        }
+    ).then(v=>v.json()),
+    confirmFriendRequest: (id) => fetch(
+        `/api/friends/requests/${id}`,{
+            method: "post"
+        }
+    ),
+    searchFriends: (text) => fetch(
+        `/api/users/search?text=${encodeURIComponent(text)}`
+    ).then(v=>v.json()),
     uploadFiles: (body) => fetch(
         "/api/files",{
             method: "put",
@@ -112,6 +135,31 @@ let api = {
             method: "delete"
         }
     ),
+    setLike: (id) => fetch(
+        `/api/posts/${id}/like`,{
+            method: "post"
+        }
+    ),
+    setDislike: (id) => fetch(
+        `/api/posts/${id}/dislike`,{
+            method: "post"
+        }
+    ),
+    removeReact: (id) => fetch(
+        `/api/posts/${id}/none`,{
+            method: "post"
+        }
+    ),
+    getLikes: (id) => fetch(
+        `/api/posts/${id}/like`,{
+            method: "get"
+        }
+    ).then(v=>v.json()),
+    getDislike: (id) => fetch(
+        `/api/posts/${id}/dislike`,{
+            method: "get"
+        }
+    ).then(v=>v.json()),
     /**
      * get all user dialogs
      * @param {number} id 

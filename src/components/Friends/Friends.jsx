@@ -17,13 +17,14 @@ const Friends = (props) => {
         else
             api.getUserFriends().then(v=>setFriends(v));
     },[])
+    const onSearch = (text) => api.searchFriends(text).then(setSearch);
     return (
         <div className={s.componentWrapper}>
            <PageTitle title = {"Друзья"}/>
-           <SearchBar />
+           <SearchBar onSearch={onSearch} />
            <div className={s.gridContainer}>
                 <FriendsColumn title = {'Мои друзья'} friends={friends}/>
-                <FriendsColumn title = {'Результат поиска'} friends={search}/>
+                <FriendsColumn title = {'Результат поиска'} friends={search} invites/>
            </div>
            
         </div>

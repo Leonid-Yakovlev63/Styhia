@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import api from '../../service/api';
 
 export default function NewPoem() {
@@ -9,7 +9,8 @@ export default function NewPoem() {
     const handleSubmit = (e) => {
         e.preventDefault();
         let formData = new FormData();
-        formData.append("files", files);
+        if(files) for(let file of files)
+            formData.append("files", file, file.name);
         if(files)
             api.uploadFiles(formData).then(v=>v.json())
             .then(v=>api.sendPost(title, text, v))

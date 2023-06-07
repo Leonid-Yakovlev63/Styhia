@@ -1,6 +1,8 @@
 
 import { useNavigate } from "react-router-dom";
 import s from "./Friend.module.css";
+import { IconUserPlus } from "@tabler/icons-react";
+import api from "../../../../../service/api";
 const Friend = (props) => {
     /**
      * @type {{id:number,name:string,surname:string,status:string|null,avatar:number|null,role:string,createdAt}}
@@ -17,6 +19,7 @@ const Friend = (props) => {
                     <h3>{data.name+" "+data.surname}</h3>
                     <h4>{(data.status?.length>16?data.status.substring(0,13)+"...":data.status)??""}</h4>
                 </div>
+                {props.invites?<IconUserPlus className={s.invite} size={'2rem'} onClick={api.sendFriendRequest(data.id)} />:undefined}
             </div>
         </div>
     );

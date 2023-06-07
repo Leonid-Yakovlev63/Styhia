@@ -1,0 +1,12 @@
+.file{
+    display: flex;
+    max-width: 14rem;
+    padding: .25rem;
+}.download{
+    cursor: pointer;
+    margin-left: .5rem;
+    color: black;
+}.text{
+    margin-top: auto;
+    margin-bottom: auto;
+}
