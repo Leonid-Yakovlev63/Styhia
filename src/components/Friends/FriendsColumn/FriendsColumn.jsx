@@ -9,7 +9,7 @@ const FriendsColumn = (props) => {
 return (
     <div className={s.componentWrapper}>
         <PageTitle title = {props.title} />
-        <FriendsContainer friends = {props.friends} invites={props.invites}/>
+        <FriendsContainer friends = {props.friends} invites={props.invites} delete={props.delete} confirm={props.confirm} remove={props.remove} refresh={props.refresh}/>
     </div>
     );
 };

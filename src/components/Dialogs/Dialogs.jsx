@@ -1,31 +1,25 @@
-import React from "react";
-
-import s from './Dialogs.module.css'
-import DialogItem from "../Messages/DialogItem/DialogItem";
-import Message from "../Messages/Message/Message";
-
-<Message /> 
-
-const Dialogs = (props) => {
-
-
-let dialogsElements = props.state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
-
-let messagesElements = props.state.messages.map( m => <Message message={m.message}/>);
-
-    return(
-        <div>
-            <h1 className={s.title}>Сообщения</h1>
-            <div className={s.dialogs}>
-                <div className={s.dialogsItems}>
-                    {dialogsElements}
-                </div>
-                <div className={s.messages}>
-                    {messagesElements}
-                </div>
-            </div>
-        </div>
-    )
-}
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import s from './Dialogs.module.css';
+import PageTitle from '../UI/PageTitle/PageTitle';
+import DialogList from './DialogList/DialogList';
+import api from '../../service/api';
+const Dialogs = () => {
+        let [dialogs, setDialogs] = useState([]);
+        useEffect(()=>{
+            api.getDialogs().then(v=>setDialogs(v));
+        }, [])
+  
+        const history = useNavigate();
+        return (
+            <>
+                <PageTitle title='Сообщения' />
+                <button className={s.button} onClick={()=>history("/chat/new")}>
+                    <p>Новый чат</p>
+                </button>
+                <DialogList dialogs={dialogs} />
+            </>
+        );
+  }
 
 export default Dialogs;

@@ -16,16 +16,22 @@ const Friends = (props) => {
             api.getUserFriendsById(params.id).then(v=>setFriends(v));
         else
             api.getUserFriends().then(v=>setFriends(v));
-    },[])
+    },[]);
+    let refresh = () => {
+        if(params?.id)
+            api.getUserFriendsById(params.id).then(v=>setFriends(v));
+        else
+            api.getUserFriends().then(v=>setFriends(v));
+    }
     const onSearch = (text) => api.searchFriends(text).then(setSearch);
     return (
         <div className={s.componentWrapper}>
            <PageTitle title = {"Друзья"}/>
            <SearchBar onSearch={onSearch} />
            <div className={s.gridContainer}>
-                <FriendsColumn title = {'Мои друзья'} friends={friends}/>
-                <FriendsColumn title = {'Результат поиска'} friends={search} invites/>
-           </div>
+                <FriendsColumn title = {'Мои друзья'} friends={friends} delete refresh={refresh}/>
+                <FriendsColumn title = {'Результат поиска'} friends={search} invites refresh={refresh}/>
+            </div>
            
         </div>
     );

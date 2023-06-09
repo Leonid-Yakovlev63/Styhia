@@ -19,7 +19,7 @@ const Profile = (props) => {
             if(!v?.role) return setUserInfo({notFound:true});
             setUserInfo(v)
         }).catch(e=>setUserInfo({notFound:true}))
-    },[]);
+    },[params]);
     if(myProfile){
         if(loaded&&!props.userInfo?.role==="NEW") return history("/confirm", {replace: true, relative:'path'});
         if(loaded&&!props.userInfo?.role) return history("/login", {replace: true, relative:'path'});

@@ -18,14 +18,19 @@ a:hover{
   
 }
 @media (min-width: 320px) and (max-width: 768px) {
-  .items{
-    display: flex;
-  }
   .nav{
-    width: 100%;
-    background-color: rgb(155, 155, 155);
-    position: fixed; /* Фиксированное положение */
-    left: 0;
-    bottom: 0; /* Левый нижний угол */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 0px;
+    
   }
+  .items{
+    font-size: small;
+    display: flex;
+    gap:1%;
+  }
+  .person{
+    display: none;
+  }
+
   }

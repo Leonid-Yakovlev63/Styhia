@@ -13,7 +13,10 @@ const Navbar = (props) => {
   if (props.userInfo?.role){
     return(
   <nav className={s.nav}>
-        <Person userInfo = {props.userInfo}/>
+    <div className={s.person}>
+      <Person userInfo = {props.userInfo}/>
+    </div>
+        
         <div className={s.items}>
           <div className = {s.item}>
             <NavLink to='profile' style={({ isActive }) =>
@@ -21,7 +24,7 @@ const Navbar = (props) => {
               }>Моя страница</NavLink>
           </div>
           <div className = {s.item}>
-            <NavLink to='messages' style={({ isActive }) =>
+            <NavLink to='chats' style={({ isActive }) =>
                 isActive ? activeStyle : undefined
               }>Сообщения</NavLink>
           </div>
@@ -36,14 +39,14 @@ const Navbar = (props) => {
               }>Друзья</NavLink>
           </div>
           <div className = {s.item}>
+            <NavLink to='requests' style={({ isActive }) =>
+                isActive ? activeStyle : undefined
+              }>Запросы</NavLink>
+          </div>
+          <div className = {s.item}>
             <NavLink to='lent' style={({ isActive }) =>
                 isActive ? activeStyle : undefined
               }>Лента</NavLink>
-          </div>
-          <div className = {s.item}>
-            <NavLink to='library' style={({ isActive }) =>
-                isActive ? activeStyle : undefined
-              }>Библиотека</NavLink>
           </div>
         </div>
       </nav>)

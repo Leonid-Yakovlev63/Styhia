@@ -58,10 +58,3 @@
     background-color: #ddd;
     outline: none;
   }
-.restore{
-    text-align: center;
-    cursor: pointer;
-}
-.restore a:hover{
-    color: #61dafb;
-}

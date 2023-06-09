@@ -74,7 +74,7 @@ export default function AuthorBlock(props) {
       {auth?<LikeButton liked={react.react==="LIKE"} likes={react.likes} onClick={()=>setLike()} />:undefined}
       {auth?<DislikeButton disliked={react.react==="DISLIKE"} dislikes={react.dislikes} onClick={()=>setDislike()} />:undefined}
       <div style={{display:"flex", flex:"1"}}/>
-      {props.deleteId?<IconTrash cursor={"pointer"} onClick={()=>props.comment!==undefined?api.removeComment(data.comment):api.removePost(props.deleteId).then(()=>props.reload())} />:undefined}
+      {props.deleteId?<IconTrash className={s.trash} cursor={"pointer"} onClick={()=>props.comment!==undefined?api.removeComment(props.comment):api.removePost(props.deleteId).then(()=>props.reload())} />:undefined}
     </div>
   )
 }

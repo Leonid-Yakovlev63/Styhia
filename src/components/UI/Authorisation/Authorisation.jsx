@@ -41,9 +41,6 @@ const Authorisation = (props) => {
                 <div className={s.button}>
                     <button type="submit"><p>Войти</p></button>
                 </div>
-                <div className={s.restore}>
-                    <h3>Забыли пароль?<strong> <a>Восстановить!</a></strong></h3>
-                </div>
         </form>
     </div>
   );

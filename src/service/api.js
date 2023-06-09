@@ -8,6 +8,35 @@ let api = {
             method: "get"
         }
     ).then(v=>v.json()),
+    setImage: (file) => fetch(
+        "/api/avatars",{
+            method: "post",
+            body:file
+        }
+    ),
+    setName: (name, surname) => fetch(
+        "/api/user/name",{
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body:JSON.stringify({
+                firstname:name??null,
+                surname:surname??null
+            })
+        }
+    ),
+    setStatus: (status) => fetch(
+        "/api/user/status",{
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body:JSON.stringify({
+                status
+            })
+        }
+    ),
     registration: (data) => fetch(
         "/api/register",{
             method: "post",
@@ -103,6 +132,16 @@ let api = {
             method: "post"
         }
     ),
+    deleteFriend: (id) => fetch(
+        `/api/friends/${id}`,{
+            method: "delete"
+        }
+    ),
+    deleteFriendRequest: (id) => fetch(
+        `/api/friends/requests/${id}`,{
+            method: "delete"
+        }
+    ),
     getFriendRequests: () => fetch(
         `/api/friends/requests`,{
             method: "get"
@@ -137,6 +176,17 @@ let api = {
                 title:title??null,
                 text:text??null,
                 files:files??null
+            })
+        }
+    ),
+    sendComment: (postId, text) => fetch(
+        `/api/comments/${postId}`,{
+            method: "put",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                text:text??null
             })
         }
     ),
@@ -184,6 +234,34 @@ let api = {
     getDialogs: () => fetch(
         `/api/chats`,{
             method: "get"
+        }
+    ).then(v=>v.json()),
+    addDialog: (title, users) => fetch(
+        `/api/chats`,{
+            method: "put",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                title:title??null,
+                users:users??null
+            })
+        }
+    ).then(v=>v.json()),
+    getMessagesByChatId: (id) => fetch(
+        `/api/chats/${id}/messages`,{
+            method: "get"
+        }
+    ).then(v=>v.json()),
+    sendMessages: (id, text) => fetch(
+        `/api/chats/${id}/messages`,{
+            method: "put",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                text:text??null
+            })
         }
     ).then(v=>v.json()),
 };

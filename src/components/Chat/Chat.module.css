@@ -10,6 +10,13 @@
     background-color: slategrey;
     display: grid;
     grid-template-columns: 2fr 10fr;
+}.chatContainer{
+    display: grid;
+    grid-template-rows: 1fr 3rem;
+}.main{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 5rem 1fr;
 }
 
 .dialogsItems{

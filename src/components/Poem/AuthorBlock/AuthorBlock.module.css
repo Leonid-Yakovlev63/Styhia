@@ -17,3 +17,7 @@
     font-size: .75rem;
     display: block;
 }
+.trash:hover{
+    transition: 0.2s;
+    color: white;
+}

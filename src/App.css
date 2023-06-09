@@ -1,3 +1,18 @@
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background: #2b2b2b;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #616161;
+  border-radius: 15px;
+}
+::-webkit-scrollbar-thumb:active{
+  background: #424242;
+}
 .App {
   text-align: center;
 }
@@ -65,6 +80,19 @@ body{
   text-align: center;
   padding: 10px;
 }
+body::-webkit-scrollbar {
+  width: 12px; 
+}
+
+body::-webkit-scrollbar-track {
+  background: #282c34;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #474A51;
+  border-radius: 20px;
+  border: 3px solid;
+}
 @media  (max-width: 1200px){
   .app-wrapper{
     width: 100%;
@@ -76,13 +104,16 @@ body{
     display: grid;
 
     grid-template-areas:
+    "n n n n"
     "h h h h"
     "c c c c"
     "c c c c"
-    "n n n n";
+    "c c c c"
+    "c c c c";
   
       grid-template-rows: 60px 1fr;
       grid-template-columns: 2fr 10fr;
 
   }
   }
+  

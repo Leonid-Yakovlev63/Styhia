@@ -6,7 +6,12 @@
     cursor: pointer;
     margin-left: .5rem;
     color: black;
-}.text{
+}
+.download:hover{
+    transition: 0.2s;
+    color: white;
+}
+.text{
     margin-top: auto;
     margin-bottom: auto;
 }

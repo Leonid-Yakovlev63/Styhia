@@ -1,5 +1,5 @@
-.componentWrapper{
-    padding: 1.5rem;
+.selectUsers{
+    margin-bottom: 10px;
 }
 .button{
     color: black;
@@ -24,4 +24,11 @@
 .button p:hover{
     transition: 0.2s;
     color: white;
+}
+.inputWrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+.input{
+    border-radius: 10px;
 }

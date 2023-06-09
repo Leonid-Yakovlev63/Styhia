@@ -1,0 +1,69 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: rgb(155, 155, 155);
+    border-radius: 15px;
+    padding: 20px;
+
+  }
+  
+  .input,
+  .fileInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  border: none;
+  }
+  .textarea{
+    width: 100%;
+    height: 450px;
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: none;
+    border: none;
+    border-radius: 10px;
+  padding: 10px;
+  }
+  
+  .fileContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .fileInputLabel {
+    padding: 10px 20px;
+    background-color: #ccc;
+    color: #fff;
+    cursor: pointer;
+  }
+  .buttons{
+    display: flex;
+    gap:10px
+  }
+  .button{
+    background-color: #474A51;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  .button p{
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  .button p:hover{
+    transition: 0.2s;
+    color: rgb(0, 255, 255);
+  }
+  .button:hover{
+    transition: 0.2s;
+    border-radius: 15px;
+    background-color: #5d6371;
+  }

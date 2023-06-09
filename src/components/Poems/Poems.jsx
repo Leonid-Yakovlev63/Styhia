@@ -24,7 +24,9 @@ const Poems = (props) => {
     return (
         <div className={s.componentWrapper}>
             <PageTitle title = "Стихи" />
-            {my?<button onClick={()=>history("/newPoem")}>новый</button>:undefined}
+            {my?<button className={s.button} onClick={()=>history("/newPoem")}>
+                <p>Новый стих</p>
+                </button>:undefined}
             {poemsList}
         </div>
     );
