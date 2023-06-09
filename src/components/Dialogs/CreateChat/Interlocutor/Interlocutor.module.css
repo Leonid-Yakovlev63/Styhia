@@ -1,0 +1,45 @@
+.componentWrapper {
+    
+    display: flex;
+    gap:15px;
+    padding: 10px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    width: 70%;
+    margin-left: 20px;
+    margin-top: 10px;
+    background-color: rgb(155, 155, 155);
+  }
+
+.checkbox {
+    margin-right: 10px;
+}
+.name {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkBox:not(:disabled):not(:checked)+label:hover::before {
+    border-color: #b3d7ff;
+  }
+
+  .checkBox:not(:disabled):active+label::before {
+    background-color: rgba(0, 255,255);
+    border-color: #b3d7ff;
+  }
+
+  .checkBox:focus+label::before {
+    box-shadow: 0 0 0 0.2rem rgba(0, 255,255);
+  }
+
+  .checkBox:focus:not(:checked)+label::before {
+    border-color: #80bdff;
+  }
+
+  .checkBox:disabled+label::before {
+    background-color: rgba(0, 255,255);
+  }
+  p{
+    margin: 0;
+    padding: 0;
+  }
